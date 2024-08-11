@@ -91,6 +91,7 @@ public class UIElementPro : UIElement
 
     #region Draw
     public event Action<SpriteBatch>? OnDraw;
+    public event Action<SpriteBatch>? OnPostDraw;
     public sealed override void Draw(SpriteBatch spriteBatch)
     {
         if (AutoSetIgnoresMouseInteraction) {
@@ -102,6 +103,7 @@ public class UIElementPro : UIElement
         }
         OnDraw?.Invoke(spriteBatch);
         BaseDraw(spriteBatch);
+        OnPostDraw?.Invoke(spriteBatch);
     }
     protected virtual void BaseDraw(SpriteBatch spriteBatch)
     {
@@ -209,8 +211,9 @@ public class UIElementPro : UIElement
     #endregion
 
     #region 获取参数
-    public CalculatedStyle Dimensions => _dimensions;
-    public CalculatedStyle InnerDimensions => _innerDimensions;
+    public ref CalculatedStyle Dimensions => ref _dimensions;
+    public ref CalculatedStyle InnerDimensions => ref _innerDimensions;
+    public ref CalculatedStyle OuterDimensions => ref _outerDimensions;
     public float BorderX
     {
         get => PaddingLeft;
