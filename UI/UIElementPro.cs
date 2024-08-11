@@ -86,10 +86,7 @@ public class UIElementPro : UIElement
         PostUpdate?.Invoke();
     }
     protected virtual void UpdateSelf(GameTime gameTime) { }
-    protected virtual void BaseUpdate(GameTime gameTime)
-    {
-        base.Update(gameTime);
-    }
+    protected virtual void BaseUpdate(GameTime gameTime) => base.Update(gameTime);
     #endregion
 
     #region Draw
