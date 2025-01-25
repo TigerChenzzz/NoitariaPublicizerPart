@@ -32,7 +32,7 @@ public abstract class OriginShootSystemInner : ModSystem {
         }
         orig(msgType, remoteClient, ignoreClient, text, number, number2, number3, number4, number5, number6, number7);
     }
-    private static void Load_SpressNetMessage() {
+    private static void Load_SupressNetMessage() {
         On_NetMessage.SendData += On_NetMessage_SendData_SupressNetMessage;
     }
     #endregion
@@ -43,7 +43,7 @@ public abstract class OriginShootSystemInner : ModSystem {
         int MouseY,
         Vector2 Position,
         Vector2 OldPosition,
-        Vector2 Velocity,
+        // Vector2 Velocity,
         int ToolTime,
         int ItemTime,
         int ItemTimeMax,
@@ -92,7 +92,7 @@ public abstract class OriginShootSystemInner : ModSystem {
                 Main.mouseY,
                 player.position,
                 player.oldPosition,
-                player.velocity,
+                // player.velocity,
                 player.toolTime,
                 player.itemTime,
                 player.itemTimeMax,
@@ -116,7 +116,7 @@ public abstract class OriginShootSystemInner : ModSystem {
             Main.mouseY = MouseY;
             Player.position = Position;
             Player.oldPosition = OldPosition;
-            Player.velocity = Velocity;
+            // Player.velocity = Velocity;
             Player.toolTime = ToolTime;
             Player.itemTime = ItemTime;
             Player.itemTimeMax = ItemTimeMax;
@@ -137,6 +137,6 @@ public abstract class OriginShootSystemInner : ModSystem {
     }
     #endregion
     public override void Load() {
-        Load_SpressNetMessage();
+        Load_SupressNetMessage();
     }
 }
