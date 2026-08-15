@@ -24,7 +24,7 @@ public abstract class OriginShootSystemInner : ModSystem {
     // private static HashSet<int> SupressNetMessageIds { get; } = [ MessageID.PlayerControls, MessageID.ShotAnimationAndSound ];
     private static bool NeedSupress(int msgType) {
         return msgType == MessageID.PlayerControls  // 13
-            || msgType == MessageID.ShotAnimationAndSound; // 41
+            || msgType == MessageID.ItemRotationAndAnimation; // 41
     }
 	private static void On_NetMessage_SendData_SupressNetMessage(On_NetMessage.orig_SendData orig, int msgType, int remoteClient = -1, int ignoreClient = -1, NetworkText? text = null, int number = 0, float number2 = 0f, float number3 = 0f, float number4 = 0f, int number5 = 0, int number6 = 0, int number7 = 0) {
         if (SupressNetMessage && NeedSupress(msgType)) {
