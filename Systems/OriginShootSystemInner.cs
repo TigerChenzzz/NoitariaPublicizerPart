@@ -52,8 +52,6 @@ public abstract class OriginShootSystemInner : ModSystem {
         int ReuseDelay,
         float ItemRotation,
         Vector2 ItemLocation,
-        int ItemWidth,
-        int ItemHeight,
         int Direction,
         bool ReleaseUseItem,
         bool ControlUseItem,
@@ -101,8 +99,6 @@ public abstract class OriginShootSystemInner : ModSystem {
                 player.reuseDelay,
                 player.itemRotation,
                 player.itemLocation,
-                player.itemWidth,
-                player.itemHeight,
                 player.direction,
                 player.releaseUseItem,
                 player.controlUseItem,
@@ -125,8 +121,6 @@ public abstract class OriginShootSystemInner : ModSystem {
             Player.reuseDelay = ReuseDelay;
             Player.itemRotation = ItemRotation;
             Player.itemLocation = ItemLocation;
-            Player.itemWidth = ItemWidth;
-            Player.itemHeight = ItemHeight;
             Player.direction = Direction;
             Player.releaseUseItem = ReleaseUseItem;
             Player.controlUseItem = ControlUseItem;

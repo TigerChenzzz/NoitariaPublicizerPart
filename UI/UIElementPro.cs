@@ -90,7 +90,6 @@ public class UIElementPro : UIElement
     #endregion
 
     #region Draw
-    public event Action<SpriteBatch>? OnDraw;
     public event Action<SpriteBatch>? OnPostDraw;
     public sealed override void Draw(SpriteBatch spriteBatch)
     {
@@ -101,7 +100,6 @@ public class UIElementPro : UIElement
         {
             return;
         }
-        OnDraw?.Invoke(spriteBatch);
         BaseDraw(spriteBatch);
         OnPostDraw?.Invoke(spriteBatch);
     }
